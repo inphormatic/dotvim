@@ -144,7 +144,7 @@ return {
 
   -- UI
   {
-    'sainnhe/edge',
+    'sainnhe/sonokai',
     config = function()
       require('plugins.configs.colorscheme')
     end,

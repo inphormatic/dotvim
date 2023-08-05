@@ -1,6 +1,6 @@
-vim.g.edge_better_performance = 1
-vim.g.edge_dim_inactive_windows = 1
-vim.g.edge_show_eob = 0
-vim.g.edge_style = 'aura'
+vim.g.sonokai_better_performance = 1
+vim.g.sonokai_dim_inactive_windows = 1
+vim.g.sonokai_show_eob = 0
+vim.g.sonokai_style = 'andromeda'
 
-vim.cmd.colorscheme 'edge'
+vim.cmd.colorscheme 'sonokai'
