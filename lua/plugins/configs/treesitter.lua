@@ -9,6 +9,11 @@ require('nvim-treesitter.configs').setup {
 
   auto_install = true,
 
+  ignore_install = {
+    'gosum',
+    'gomod',
+  },
+
   highlight = { enable = true },
 }
 

@@ -1,3 +1,6 @@
+local UTILS = require('core.utils')
+
+
 -- Automatically prints out available LSPs if no one is detected
 -- for the current filetype
 vim.api.nvim_create_autocmd("FileType", {
@@ -14,6 +17,10 @@ vim.api.nvim_create_autocmd("FileType", {
     local mason_lsp = require('mason-lspconfig')
 		local available_servers = mason_lsp.get_available_servers({ filetype = t.match })
 		local installed_servers = mason_lsp.get_installed_servers()
+
+    if UTILS.tablelen(available_servers) == 0 then
+      return
+    end
 
     for _, available in ipairs(available_servers) do
 			for _, installed in ipairs(installed_servers) do
