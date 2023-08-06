@@ -121,7 +121,7 @@ return {
   {
     'Pocco81/auto-save.nvim',
     config = true,
-    event = { 'InsertLeave', 'TextChanged' },
+    event = 'InsertLeave',
   },
 
   {
