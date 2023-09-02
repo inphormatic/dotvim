@@ -27,7 +27,6 @@ opt.relativenumber = true
 opt.ruler = false
 
 -- UI
-opt.cursorcolumn = true
 opt.cursorline = true
 opt.signcolumn = 'yes'
 opt.splitbelow = true

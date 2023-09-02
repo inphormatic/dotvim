@@ -67,7 +67,7 @@ return {
 
   {
     'tpope/vim-fugitive',
-    cmd = 'Git',
+    cmd = {'Git', 'G'},
   },
 
 
@@ -111,11 +111,17 @@ return {
       { '<A-2>', desc = 'Harpoon goto file 2' },
       { '<A-3>', desc = 'Harpoon goto file 3' },
       { '<A-4>', desc = 'Harpoon goto file 4' },
-      { '<leader>sc', desc = 'Harpoon send cmd to terminal' },
-      { '<leader>s1', desc = 'Harpoon goto terminal 1' },
-      { '<leader>s2', desc = 'Harpoon goto terminal 2' },
-      { '<leader>s3', desc = 'Harpoon goto terminal 3' },
-      { '<leader>s4', desc = 'Harpoon goto terminal 4' },
+    },
+  },
+
+  {
+    'akinsho/toggleterm.nvim',
+    cmd = 'ToggleTerm',
+    config = function()
+      require('plugins.configs.terminal')
+    end,
+    keys = {
+      { '<leader>t', desc = 'Terminal' },
     },
   },
 
@@ -145,7 +151,7 @@ return {
 
   -- UI
   {
-    'sainnhe/sonokai',
+    'kyazdani42/nvim-palenight.lua',
     config = function()
       require('plugins.configs.colorscheme')
     end,

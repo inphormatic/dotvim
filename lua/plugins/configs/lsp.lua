@@ -15,18 +15,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
--- Icons for diagnostics
-local function lsp_icon(name, icon)
-  local hl = 'DiagnosticSign' .. name
-  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-end
-
-lsp_icon('Error', '󰅙')
-lsp_icon('Info', '󰋼')
-lsp_icon('Hint', '󰌵')
-lsp_icon('Warn', '')
-
-
 -- Setup LSPs
 require('plugins.configs.mason')
 require('neodev').setup()
