@@ -3,10 +3,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     build = ':MasonUpdate',
-    cmd = {
-      'LspInfo',
-      'Mason',
-    },
+    cmd = { 'LspInfo', 'Mason' },
     config = function()
       require('plugins.configs.lsp')
     end,
@@ -34,6 +31,19 @@ return {
   },
 
 
+  -- GIT
+  {
+    'lewis6991/gitsigns.nvim',
+    config = true,
+    event = { "BufReadPre", "BufNewFile" },
+  },
+
+  {
+    'tpope/vim-fugitive',
+    cmd = {'Git', 'G'},
+  },
+
+
   -- AUTOCOMPLETION
   {
     'hrsh7th/nvim-cmp',
@@ -53,109 +63,21 @@ return {
 
   {
     'windwp/nvim-autopairs',
+    config = function()
+      require('plugins.configs.autopairs')
+    end,
     event = 'InsertEnter',
-    opts = {},
-  },
-
-
-  -- GIT
-  {
-    'lewis6991/gitsigns.nvim',
-    config = true,
-    event = { "BufReadPre", "BufNewFile" },
-  },
-
-  {
-    'tpope/vim-fugitive',
-    cmd = {'Git', 'G'},
-  },
-
-
-  -- UTILS
-  {
-    'numToStr/Comment.nvim',
-    config = true,
-    keys = {
-      { mode = { 'n', 'v' }, 'gcc' },
-      { mode = { 'n', 'v' }, 'gbc' },
-    },
-  },
-
-  {
-    'nvim-telescope/telescope.nvim',
-    cmd = 'Telescope',
-    config = function()
-      require('plugins.configs.telescope')
-    end,
-    dependencies = 'nvim-lua/plenary.nvim',
-    keys = {
-      { '<leader>ci', desc = 'LSP incoming calls' },
-      { '<leader>co', desc = 'LSP outgoing calls' },
-      { '<leader>fb', desc = 'Telescope buffers' },
-      { '<leader>ff', desc = 'Telescope find files' },
-      { '<leader>fg', desc = 'Telescope live grep' },
-      { '<leader>fh', desc = 'Telescope help tags' },
-    },
-    tag = '0.1.2',
-  },
-
-  {
-    'ThePrimeagen/harpoon',
-    config = function()
-      require('plugins.configs.harpoon')
-    end,
-    keys = {
-      { '<leader>a', desc = 'Harpoon add file' },
-      { '<C-e>', desc = 'Harpoon open ui' },
-      { '<A-1>', desc = 'Harpoon goto file 1' },
-      { '<A-2>', desc = 'Harpoon goto file 2' },
-      { '<A-3>', desc = 'Harpoon goto file 3' },
-      { '<A-4>', desc = 'Harpoon goto file 4' },
-    },
-  },
-
-  {
-    'akinsho/toggleterm.nvim',
-    cmd = 'ToggleTerm',
-    config = function()
-      require('plugins.configs.terminal')
-    end,
-    keys = {
-      { '<leader>t', desc = 'Terminal' },
-    },
-  },
-
-  {
-    'Pocco81/auto-save.nvim',
-    config = true,
-    event = 'InsertLeave',
-  },
-
-  {
-    'tpope/vim-surround',
-    keys = {
-      { 'cs', desc = 'Change first surround with the second' },
-    }
-  },
-
-  {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {},
   },
 
 
   -- UI
   {
-    'kyazdani42/nvim-palenight.lua',
+    'catppuccin/nvim',
     config = function()
       require('plugins.configs.colorscheme')
     end,
     lazy = false,
+    name = 'catppuccin',
     priority = 1000,
   },
 
@@ -174,7 +96,64 @@ return {
     config = function()
       require('plugins.configs.treesitter')
     end,
-    event = { "BufReadPre", "BufNewFile" },
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    event = 'BufReadPre',
+  },
+
+
+  -- UTILS
+  {
+    'Pocco81/auto-save.nvim',
+    config = true,
+    event = { 'InsertLeave', 'TextChanged' },
+  },
+
+  {
+    'ThePrimeagen/harpoon',
+    config = function()
+      require('plugins.configs.harpoon')
+    end,
+    keys = {
+      { '<leader>a', desc = 'Harpoon add file' },
+      { '<C-e>', desc = 'Harpoon open ui' },
+      { '<A-1>', desc = 'Harpoon goto file 1' },
+      { '<A-2>', desc = 'Harpoon goto file 2' },
+      { '<A-3>', desc = 'Harpoon goto file 3' },
+      { '<A-4>', desc = 'Harpoon goto file 4' },
+    },
+  },
+
+  {
+    'tpope/vim-surround',
+    keys = {
+      { 'cs', desc = 'Change first surround with the second' },
+    },
+  },
+
+  {
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('plugins.configs.telescope')
+    end,
+    dependencies = 'nvim-lua/plenary.nvim',
+    keys = {
+      { '<leader>ci', desc = 'LSP incoming calls' },
+      { '<leader>co', desc = 'LSP outgoing calls' },
+      { '<leader>fb', desc = 'Telescope buffers' },
+      { '<leader>ff', desc = 'Telescope find files' },
+      { '<leader>fg', desc = 'Telescope live grep' },
+      { '<leader>fh', desc = 'Telescope help tags' },
+    },
+    tag = '0.1.3',
+  },
+
+  {
+    'folke/zen-mode.nvim',
+    config = true,
+    dependencies = 'folke/twilight.nvim',
+    keys = {
+      { '<leader>z', '<cmd>ZenMode<CR>', desc = 'Zen Mode' },
+    },
   },
 }
 

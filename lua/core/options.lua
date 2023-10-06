@@ -27,6 +27,7 @@ opt.relativenumber = true
 opt.ruler = false
 
 -- UI
+opt.clipboard = 'unnamedplus'
 opt.cursorline = true
 opt.signcolumn = 'yes'
 opt.splitbelow = true

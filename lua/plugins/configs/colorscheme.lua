@@ -1,2 +1,2 @@
-vim.cmd.colorscheme 'palenight'
+vim.cmd.colorscheme 'catppuccin'
 
