@@ -3,7 +3,7 @@
 ### Install
 
 ```bash
-git clone https://github.com/inphormatic/dotfiles-neovim.git ~/.config/nvim && nvim
+git clone https://github.com/inphormatic/dotvim.git ~/.config/nvim && nvim
 ```
 
 ### Uninstall
