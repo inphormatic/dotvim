@@ -71,10 +71,6 @@ return {
 
   {
     'numToStr/Comment.nvim',
-    keys = {
-      { 'gcc', desc = 'Comment the current line (linewise)' },
-      { 'gbc', desc = 'Comment the current line (blockwise)' },
-    },
     opts = {},
   },
 
