@@ -49,10 +49,7 @@ return {
   },
 
   {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('plugins.configs.autopairs')
-    end,
+    'cohama/lexima.vim',
     event = 'InsertEnter',
   },
 
