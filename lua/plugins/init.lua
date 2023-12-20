@@ -22,13 +22,13 @@ return {
 
   {
     'numToStr/Comment.nvim',
-    config = true,
     keys = {
       { 'gc', 'v', desc = "Comment region linewise" },
       { 'gb', 'v', desc = "Comment region blockwise" },
       { 'gbc', 'n', desc = "Comment blockwise" },
       { 'gcc', 'n', desc = "Comment linewise" },
     },
+    opts = {},
   },
 
 
