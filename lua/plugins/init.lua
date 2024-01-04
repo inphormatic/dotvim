@@ -134,13 +134,6 @@ return {
 
   -- UI
   {
-    'akinsho/bufferline.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    opts = {},
-    version = '*',
-  },
-
-  {
     'lewis6991/gitsigns.nvim',
     config = true,
     event = { 'BufReadPre', 'BufNewFile' },
