@@ -134,6 +134,13 @@ return {
 
   -- UI
   {
+    'akinsho/bufferline.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    opts = {},
+    version = '*',
+  },
+
+  {
     'lewis6991/gitsigns.nvim',
     config = true,
     event = { 'BufReadPre', 'BufNewFile' },
@@ -147,11 +154,12 @@ return {
   },
 
   {
-    'sainnhe/edge',
+    'catppuccin/nvim',
     config = function()
       require('plugins.configs.colorscheme')
     end,
     lazy = false,
+    name = "catppuccin",
     opts = {},
     priority = 1000,
   },
