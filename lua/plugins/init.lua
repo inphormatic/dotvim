@@ -20,17 +20,6 @@ return {
     },
   },
 
-  {
-    'numToStr/Comment.nvim',
-    keys = {
-      { 'gc', 'v', desc = "Comment region linewise" },
-      { 'gb', 'v', desc = "Comment region blockwise" },
-      { 'gbc', 'n', desc = "Comment blockwise" },
-      { 'gcc', 'n', desc = "Comment linewise" },
-    },
-    opts = {},
-  },
-
 
   -- Autocompletion
   {
@@ -39,11 +28,14 @@ return {
       require('plugins.configs.cmp')
     end,
     dependencies = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
       'rafamadriz/friendly-snippets',
+      'onsails/lspkind.nvim',
     },
     event = 'LspAttach',
   },
@@ -55,17 +47,6 @@ return {
 
 
   -- Utils
-  {
-    'ggandor/leap.nvim',
-    config = function()
-      require('plugins.configs.leap')
-    end,
-    dependencies = 'tpope/vim-repeat',
-    keys = {
-      { 's', desc = 'Leap search' },
-    },
-  },
-
   {
     'nvim-telescope/telescope.nvim',
     config = function()
@@ -121,16 +102,33 @@ return {
     keys = {
       { '<leader>h', desc = 'Harpoon open' },
       { '<leader>a', desc = 'Harpoon add file' },
-      { '1', desc = 'Harpoon goto file 1' },
-      { '2', desc = 'Harpoon goto file 2' },
-      { '3', desc = 'Harpoon goto file 3' },
-      { '4', desc = 'Harpoon goto file 4' },
+      { '<A-1>', desc = 'Harpoon goto file 1' },
+      { '<A-2>', desc = 'Harpoon goto file 2' },
+      { '<A-3>', desc = 'Harpoon goto file 3' },
+      { '<A-4>', desc = 'Harpoon goto file 4' },
+    },
+  },
+
+  {
+    'tpope/vim-commentary',
+    keys = {
+      'gc', 'v', desc = "Comment region",
+      'gcc', desc = "Comment linewise",
+      'gcgc', desc = "Ucomment",
     },
   },
 
   {
     'tpope/vim-fugitive',
     cmd = { 'G', 'Git' },
+  },
+
+  {
+    'tpope/vim-surround',
+    keys = {
+      'cs', desc = 'Change surroundings',
+      'ds', desc = 'Delete surroundings',
+    },
   },
 
 
