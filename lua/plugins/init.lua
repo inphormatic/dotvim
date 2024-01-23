@@ -20,6 +20,12 @@ return {
     },
   },
 
+  {
+    'j-hui/fidget.nvim',
+    event = { 'BufReadPre' },
+    opts = {},
+  },
+
 
   -- Autocompletion
   {
@@ -106,7 +112,17 @@ return {
       { '<A-2>', desc = 'Harpoon goto file 2' },
       { '<A-3>', desc = 'Harpoon goto file 3' },
       { '<A-4>', desc = 'Harpoon goto file 4' },
+      { '<A-5>', desc = 'Harpoon goto file 5' },
     },
+  },
+
+  {
+    'iamcco/markdown-preview.nvim',
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { 'markdown' },
   },
 
   {
