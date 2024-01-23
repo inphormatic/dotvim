@@ -22,7 +22,7 @@ return {
 
   {
     'j-hui/fidget.nvim',
-    event = { 'BufReadPre' },
+    event = 'LspAttach',
     opts = {},
   },
 
@@ -157,6 +157,9 @@ return {
 
   {
     'nvim-lualine/lualine.nvim',
+    config = function()
+      require('plugins.configs.lualine')
+    end,
     dependencies = 'nvim-tree/nvim-web-devicons',
     event = 'BufReadPre',
     opts = {},
