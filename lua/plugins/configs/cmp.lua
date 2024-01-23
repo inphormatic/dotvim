@@ -83,3 +83,7 @@ cmp.setup {
   },
 }
 
+
+-- PMenu customizazion
+vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#292733", fg = "NONE" })
+vim.api.nvim_set_hl(0, "Pmenu", { fg = "#ACDDE2", bg = "#212128" })
