@@ -54,6 +54,16 @@ return {
 
   -- Utils
   {
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    config = function()
+      require('plugins.configs.neorg')
+    end,
+    dependencies = 'nvim-lua/plenary.nvim',
+    ft = { 'markdown' },
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     config = function()
       require('plugins.configs.telescope')
