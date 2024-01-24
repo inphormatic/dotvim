@@ -18,6 +18,8 @@ return {
       { 'gd', desc = 'LSP definition' },
       { 'gi', desc = 'LSP implementation' },
       { 'gr', desc = 'LSP references' },
+      { 'gs', desc = 'LSP signature helper' },
+      { 'gt', desc = 'LSP type definitions' },
       { 'gw', desc = 'LSP diagnostics' },
       { 'K', desc = 'LSP documentation' },
     },
