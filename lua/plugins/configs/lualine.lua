@@ -8,17 +8,28 @@ require('lualine').setup {
     lualine_a = {
       { 'mode', right_padding = 2 },
     },
-    lualine_b = { 'branch' },
+    lualine_b = { 'location' },
     lualine_c = {
-      'diff',
       { 'filename', path = 1 },
-      'diagnostics',
+      {
+        'diagnostics',
+        sources = { 'nvim_diagnostic' },
+        symbols = { error = ' ', warn = ' ', info = ' ' }
+      },
     },
-    lualine_x = { 'filetype' },
-    lualine_y = { 'location' },
-    lualine_z = {
-      { function() return '  ' .. os.date('%H:%M:%S') end, left_padding = 2 },
+    lualine_x = {
+      {
+        'diff',
+        diff_color = {
+          added =  { fg = '#98BE65' },
+          modified =  { fg = '#FFA726' },
+          removed =  { fg = '#EC5f67' },
+        },
+        symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+      },
     },
+    lualine_y = { 'filetype' },
+    lualine_z = { 'branch' },
   },
 
   inactive_sections = {
@@ -26,4 +37,3 @@ require('lualine').setup {
     lualine_z = { 'location' },
   },
 }
-
