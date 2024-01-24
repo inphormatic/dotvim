@@ -60,7 +60,12 @@ cmp.setup {
   },
 
   sources = {
-    { name = 'buffer' },
+    {
+      name = 'buffer',
+      entry_filter = function(entry, _)
+        return cmp.lsp.CompletionItemKind.Text ~= entry:get_kind()
+      end,
+    },
     { name = 'nvim_lsp_document_symbol' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
