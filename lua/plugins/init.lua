@@ -12,7 +12,7 @@ return {
     cond = function()
       return vim.bo.filetype ~= 'markdown'
     end,
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     keys = {
       { '<leader>r', desc = 'Rename word' },
       { 'gd', desc = 'LSP definition' },
@@ -25,9 +25,6 @@ return {
 
   {
     'j-hui/fidget.nvim',
-    cond = function()
-      return vim.bo.filetype ~= 'markdown'
-    end,
     event = 'LspAttach',
     opts = {},
   },
@@ -38,9 +35,6 @@ return {
     'hrsh7th/nvim-cmp',
     config = function()
       require('plugins.configs.cmp')
-    end,
-    cond = function()
-      return vim.bo.filetype ~= 'markdown'
     end,
     dependencies = {
       'hrsh7th/cmp-buffer',
