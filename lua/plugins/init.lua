@@ -34,6 +34,11 @@ return {
 
   -- Autocompletion
   {
+    'github/copilot.vim',
+    cmd = 'Copilot',
+  },
+  
+  {
     'hrsh7th/nvim-cmp',
     config = function()
       require('plugins.configs.cmp')
