@@ -6,6 +6,11 @@ vim.keymap.set('n', '<A-k>', '<C-w>k', {})
 vim.keymap.set('n', '<A-l>', '<C-w>l', {})
 vim.keymap.set('n', '<A-q>', '<C-w>q', {})
 
+vim.keymap.set('i', '<A-o>', '<ESC>o', {})
+vim.keymap.set('i', '<A-O>', '<ESC>O', {})
+vim.keymap.set('i', '<A-e>', '<ESC>ea', {})
+vim.keymap.set('i', '<A-b>', '<ESC>bi', {})
+
 vim.api.nvim_create_autocmd('filetype', {
   callback = function()
     local opts = { buffer = true, remap = true }
