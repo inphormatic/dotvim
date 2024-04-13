@@ -37,7 +37,7 @@ return {
     'github/copilot.vim',
     cmd = 'Copilot',
   },
-  
+
   {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -63,16 +63,6 @@ return {
 
 
   -- Utils
-  {
-    'nvim-neorg/neorg',
-    build = ':Neorg sync-parsers',
-    config = function()
-      require('plugins.configs.neorg')
-    end,
-    dependencies = 'nvim-lua/plenary.nvim',
-    ft = { 'markdown' },
-  },
-
   {
     'nvim-telescope/telescope.nvim',
     config = function()
@@ -128,11 +118,11 @@ return {
     keys = {
       { '<leader>h', desc = 'Harpoon open' },
       { '<leader>a', desc = 'Harpoon add file' },
-      { '<A-1>', desc = 'Harpoon goto file 1' },
-      { '<A-2>', desc = 'Harpoon goto file 2' },
-      { '<A-3>', desc = 'Harpoon goto file 3' },
-      { '<A-4>', desc = 'Harpoon goto file 4' },
-      { '<A-5>', desc = 'Harpoon goto file 5' },
+      { '<leader>1', desc = 'Harpoon goto file 1' },
+      { '<leader>2', desc = 'Harpoon goto file 2' },
+      { '<leader>3', desc = 'Harpoon goto file 3' },
+      { '<leader>4', desc = 'Harpoon goto file 4' },
+      { '<leader>5', desc = 'Harpoon goto file 5' },
     },
   },
 
@@ -167,6 +157,10 @@ return {
     },
   },
 
+  {
+    'mg979/vim-visual-multi',
+  },
+
 
   -- UI
   {
@@ -179,20 +173,20 @@ return {
     'nvim-lualine/lualine.nvim',
     config = function()
       require('plugins.configs.lualine')
-    end,
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    event = 'BufReadPre',
-    opts = {},
-  },
+      end,
+      dependencies = 'nvim-tree/nvim-web-devicons',
+      event = 'BufReadPre',
+      opts = {},
+    },
 
-  {
-    'catppuccin/nvim',
-    config = function()
-      require('plugins.configs.colorscheme')
-    end,
-    lazy = false,
-    name = "catppuccin",
-    opts = {},
-    priority = 1000,
-  },
-}
+    {
+      'catppuccin/nvim',
+      config = function()
+        require('plugins.configs.colorscheme')
+      end,
+      lazy = false,
+      name = "catppuccin",
+      opts = {},
+      priority = 1000,
+    },
+  }

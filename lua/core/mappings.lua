@@ -5,6 +5,10 @@ vim.keymap.set('n', '<A-j>', '<C-w>j', {})
 vim.keymap.set('n', '<A-k>', '<C-w>k', {})
 vim.keymap.set('n', '<A-l>', '<C-w>l', {})
 vim.keymap.set('n', '<A-q>', '<C-w>q', {})
+vim.keymap.set('n', '<A-<>', '<C-w><', {})
+vim.keymap.set('n', '<A->>', '<C-w>>', {})
+
+vim.keymap.set('n', 'M', '<cmd>marks<CR>', {})
 
 vim.api.nvim_create_autocmd('filetype', {
   callback = function()

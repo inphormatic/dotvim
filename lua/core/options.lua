@@ -29,6 +29,7 @@ opt.ruler = false
 -- UI
 opt.clipboard = 'unnamedplus'
 opt.cursorline = true
+opt.cursorcolumn = true
 opt.signcolumn = 'yes'
 opt.splitbelow = true
 opt.splitright = true
