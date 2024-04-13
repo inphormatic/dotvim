@@ -8,6 +8,10 @@ vim.keymap.set('n', '<A-q>', '<C-w>q', {})
 vim.keymap.set('n', '<A-<>', '<C-w><', {})
 vim.keymap.set('n', '<A->>', '<C-w>>', {})
 
+vim.keymap.set('n', 'm', function()
+  local input = vim.fn.input('Mark id: ')
+  vim.cmd('mark ' .. input)
+end, {})
 vim.keymap.set('n', 'M', '<cmd>marks<CR>', {})
 
 vim.api.nvim_create_autocmd('filetype', {
