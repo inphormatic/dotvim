@@ -27,6 +27,7 @@ opt.relativenumber = true
 opt.ruler = false
 
 -- UI
+opt.background = 'dark'
 opt.clipboard = 'unnamedplus'
 opt.cursorline = true
 opt.cursorcolumn = true

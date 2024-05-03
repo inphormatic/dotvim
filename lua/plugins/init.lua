@@ -145,8 +145,12 @@ return {
   },
 
   {
-    'tpope/vim-fugitive',
-    cmd = { 'G', 'Git' },
+    'kdheepak/lazygit.nvim',
+    cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
+    dependencies = 'nvim-lua/plenary.nvim',
+    keys = {
+      { '<leader>gg', '<cmd>LazyGit<CR>', desc = 'LazyGit' },
+    }
   },
 
   {
@@ -180,12 +184,11 @@ return {
     },
 
     {
-      'catppuccin/nvim',
+      'ellisonleao/gruvbox.nvim',
       config = function()
         require('plugins.configs.colorscheme')
       end,
       lazy = false,
-      name = "catppuccin",
       opts = {},
       priority = 1000,
     },
