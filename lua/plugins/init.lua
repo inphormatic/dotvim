@@ -163,6 +163,9 @@ return {
 
   {
     'mg979/vim-visual-multi',
+    config = function()
+      require('plugins.configs.multicursor')
+    end,
   },
 
 
